@@ -1,7 +1,14 @@
 #ifndef JSON_LIB
 #define JSON_LIB
 
-enum DataType { INT, DOUBLE, FLOAT, CHAR, STRING };
+typedef enum DataType { 
+    TYPE_STRING, 
+    TYPE_NUMBER, 
+    TYPE_BOOL, 
+    TYPE_NULL, 
+    TYPE_OBJECT,
+    TYPE_ARRAY 
+} DataType;
 
 typedef struct JsonPair {
     char *key;

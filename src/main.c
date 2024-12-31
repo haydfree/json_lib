@@ -15,27 +15,27 @@ char *escapeJsonStr(const char *js) {
                 break;
             case '\"':
                 output[j++] = '\\';
-                output[j++] = '\"';
+                output[j++] = '"';
                 break;
             case '\n':
                 output[j++] = '\\';
-                output[j++] = '\n';
+                output[j++] = 'n';
                 break;
             case '\b':
                 output[j++] = '\\';
-                output[j++] = '\b';
+                output[j++] = 'b';
                 break;
             case '\f':
                 output[j++] = '\\';
-                output[j++] = '\f';
+                output[j++] = 'f';
                 break;
             case '\r':
                 output[j++] = '\\';
-                output[j++] = '\r';
+                output[j++] = 'r';
                 break;
             case '\t':
                 output[j++] = '\\';
-                output[j++] = '\t';
+                output[j++] = 't';
                 break;
             default:
                 output[j++] = js[i];
@@ -48,14 +48,7 @@ char *escapeJsonStr(const char *js) {
 }
 
 int main() {
-
-    const char *str = "hello \n buddy \t guy";
-    str = escapeJsonStr(str);
-
-    int i;
-    for (i = 0; i < (int) strlen(str); i++) {
-        printf("char: %c\n", str[i]);
-    }
-
+    
+    
     return 0;
 }
