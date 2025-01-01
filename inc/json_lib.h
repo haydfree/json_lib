@@ -17,7 +17,7 @@ typedef struct JsonPair {
 } JsonPair;
 
 typedef struct JsonObject {
-    JsonPair *pairArray;
+    JsonPair **pairArray;
     int size;
 } JsonObject;
 
@@ -33,7 +33,7 @@ extern char *jsonArrayToStr(JsonArray *ja);
 
 /* JSON deserialization */
 extern JsonObject *jsonDecode(const char *js);
-extern JsonPair *jsonStrToPair(const char *js, int idx);
+extern JsonPair *jsonStrToPair(const char *js, int *idx);
 extern JsonArray *jsonStrToArray(const char *js, int idx);
 
 /* helper functions */
